@@ -13,6 +13,10 @@ public:
 		: m_number{ number }
 	{};
 
+	int getNum() const { return m_number; }
+
+	bool isEmpty() const { return m_number == 0; }
+
 	friend std::ostream& operator<<(std::ostream& stream, const Tile& tile);
 };
 
