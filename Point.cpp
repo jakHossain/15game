@@ -6,9 +6,9 @@ Point Point::getAdjacentPoint(Direction::Type direction)
 	switch (direction)
 	{
 	case Direction::Type::up:
-		return Point{ x ,y + 1 };
-	case Direction::Type::down:
 		return Point{ x ,y - 1 };
+	case Direction::Type::down:
+		return Point{ x ,y + 1 };
 	case Direction::Type::left:
 		return Point{ x - 1 ,y };
 	case Direction::Type::right:

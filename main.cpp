@@ -10,37 +10,33 @@ extern const int g_consoleLines{ 25 };
 int main()
 {
 	Board b{};
-	//std::cout << b;
-	//char input{};
-	//do {
-	//	input = UserInput::getCommandFromUser();
-
-	//	Direction dir{ Direction::randomDirection()};
-	//	
-	//	if (dir.getDirection() != 4)
-	//	{
-	//	std::cout << "You went " << dir << "\n";
-	//	}
-
-
-	//
-	//} while (input != 'q');
-
-	Point p { 1,1 };
-
 	std::cout << b;
-	Point emp{ b.findEmptyTile() };
+	char input{};
+	do {
+		input = UserInput::getCommandFromUser();
 
-	b.swapTiles(p, emp);
-	std::cout << b;
+		Direction dir{ Direction::createDirection(input)};
 
-	std::cout << "The empty tile is in: " << emp << "\n";
+		if (dir.getDirection() != 4)
+		{
+			bool moved{ b.moveTile(dir.getDirection()) };
+			if (moved)
+			{
+			std::cout << b;
+			std::cout << "You went " << dir << "!\n";
+			}
+			else
+			{
+				std::cout << b;
+				std::cout << "You can't move there! Try again. \n";
+			}
+		}
 
-	std::cout << p << "\n";
-	std::cout << p.getAdjacentPoint(Direction::left) << "\n";
-	std::cout << p.getAdjacentPoint(Direction::up) << "\n";
-	std::cout << p.getAdjacentPoint(Direction::right) << "\n";
-	std::cout << p.getAdjacentPoint(Direction::down) << "\n";
+
+	} while (input != 'q');
+
+
+
 	std::cout << "\n\nBye!!\n\n";
 	return 0;
 

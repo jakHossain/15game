@@ -47,7 +47,7 @@ public:
 		case 'a':
 			return Direction{ Type::left };
 		default:
-			return Direction{ Type::up };
+			return Direction{ Type::max_directions };
 		}
 	}
 

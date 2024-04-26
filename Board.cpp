@@ -47,11 +47,6 @@ Tile& Board::getTile(int row, int col)
 
 void Board::swapTiles(const Point& p1, const Point& p2)
 {
-	if (!(checkIfValidTile(p1) == true && checkIfValidTile(p2) == true))
-	{
-		std::cout << "Invalid tiles";
-		return;
-	}
 
 	Tile& p1Tile{ getTile(p1.y, p1.x) };
 	Tile& p2Tile{ getTile(p2.y, p2.x) };
@@ -60,5 +55,22 @@ void Board::swapTiles(const Point& p1, const Point& p2)
 
 	p1Tile.setNum(p2Tile.getNum());
 	p2Tile.setNum(tempTileNum);
+
+}
+
+bool Board::moveTile(Direction::Type dir)
+{
+	Point emptyTile{ Board::findEmptyTile() };
+
+	Point tileToSwap{ emptyTile.getAdjacentPoint(dir) };
+
+	if (!Board::checkIfValidTile(tileToSwap))
+	{
+		return false;
+	}
+
+	Board::swapTiles(emptyTile, tileToSwap);
+
+	return true;
 
 }

@@ -38,9 +38,12 @@ public:
 
 	void swapTiles(const Point& p1, const Point& p2);
 
+	bool moveTile(Direction::Type dir);
 
 
 	friend std::ostream& operator<<(std::ostream& stream, const Board& b);
+
 };
+
 
 #endif // !BOARDCLASS
