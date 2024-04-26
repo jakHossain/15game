@@ -15,7 +15,10 @@ public:
 
 	int getNum() const { return m_number; }
 
+	void setNum(int num) { m_number = num; }
+
 	bool isEmpty() const { return m_number == 0; }
+
 
 	friend std::ostream& operator<<(std::ostream& stream, const Tile& tile);
 };

@@ -6,7 +6,7 @@ std::ostream& operator<<(std::ostream& stream, const Tile& tile)
 {
 	if (tile.m_number == 0)
 	{
-		stream << "   ";
+		stream << "    ";
 	}
 	else if (tile.m_number > 9)
 	{
