@@ -16,7 +16,7 @@ namespace UserInput
 	{
 		while (true)
 		{
-			std::cout << "Enter a move: ";
+			std::cout << "Enter w,a,s, or d to move the blank space. Or q to quit: ";
 			char input{};
 			std::cin >> input;
 
