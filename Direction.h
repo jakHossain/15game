@@ -39,7 +39,7 @@ public:
 		switch (input)
 		{
 		case 'w':
-			return Direction{ Type::up};
+			return Direction{ Type::up };
 		case 's':
 			return Direction{ Type::down };
 		case 'd':

@@ -10,6 +10,7 @@ extern const int g_consoleLines{ 25 };
 int main()
 {
 	Board b{};
+	b.resetGame();
 	std::cout << b;
 	char input{};
 	do {

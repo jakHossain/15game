@@ -40,10 +40,14 @@ public:
 
 	bool moveTile(Direction::Type dir);
 
+	void randomizeBoard();
+
+	void resetGame();
 
 	friend std::ostream& operator<<(std::ostream& stream, const Board& b);
 
 };
+
 
 
 #endif // !BOARDCLASS

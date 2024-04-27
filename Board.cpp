@@ -1,5 +1,6 @@
 #include "Board.h"
 #include "Point.h"
+#include "Random.h"
 #include <iostream>
 
 extern const int g_consoleLines;
@@ -72,5 +73,33 @@ bool Board::moveTile(Direction::Type dir)
 	Board::swapTiles(emptyTile, tileToSwap);
 
 	return true;
+
+}
+
+void Board::randomizeBoard()
+{
+	const int turns{ Random::get(30, 50) };
+
+	int count{ 0 };
+	
+	while (count < turns)
+	{
+		if (Board::moveTile(Direction::randomDirection().getDirection()))
+		{
+			++count;
+		}
+	}
+
+}
+
+void Board::resetGame()
+{
+	Board::randomizeBoard();
+
+	Point emptyTile{ Board::findEmptyTile() };
+
+	Point endTile{ 3,3 };
+
+	Board::swapTiles(emptyTile, endTile);
 
 }
