@@ -5,7 +5,6 @@
 #include "Direction.h"
 #include "Point.h"
 
-extern const int g_consoleLines{ 20 };
 
 void printWelcomeMessage() 
 {
