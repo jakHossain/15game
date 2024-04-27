@@ -5,10 +5,20 @@
 #include "Direction.h"
 #include "Point.h"
 
-extern const int g_consoleLines{ 25 };
+extern const int g_consoleLines{ 20 };
+
+void printWelcomeMessage() 
+{
+	std::cout << "\nWelcome to Console 15 Puzzle!\n";
+	std::cout << "The goal is to put the numbers in the 4x4 grid below in order from 1 to 15.\n"
+		<< "The blank space should also be the bottom right corner to win the game.\n"
+		<< "You can control the position of the blank space by press W, A, S, or D and pressing enter.\n"
+		<< "Enter q to quit the game.\n";
+}
 
 int main()
 {
+	printWelcomeMessage();
 	Board b{};
 	b.resetGame();
 	std::cout << b;

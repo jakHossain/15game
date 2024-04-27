@@ -78,7 +78,7 @@ bool Board::moveTile(Direction::Type dir)
 
 void Board::randomizeBoard()
 {
-	const int turns{ Random::get(1, 2) };
+	const int turns{ Random::get(20, 40) };
 
 	int count{ 0 };
 	
