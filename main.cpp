@@ -12,6 +12,7 @@ int main()
 	Board b{};
 	b.resetGame();
 	std::cout << b;
+	bool gameWon{ false };
 	char input{};
 	do {
 		input = UserInput::getCommandFromUser();
@@ -25,6 +26,7 @@ int main()
 			{
 			std::cout << b;
 			std::cout << "You went " << dir << "!\n";
+			gameWon = b.checkWin();
 			}
 			else
 			{
@@ -34,11 +36,16 @@ int main()
 		}
 
 
-	} while (input != 'q');
+	} while (input != 'q' && !gameWon);
+
+	if (gameWon)
+	{
+		std::cout << "\n\nYou won! Congrats!!";
+	}
 
 
 
-	std::cout << "\n\nBye!!\n\n";
+	std::cout << " Bye!!\n\n";
 	return 0;
 
 

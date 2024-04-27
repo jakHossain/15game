@@ -78,7 +78,7 @@ bool Board::moveTile(Direction::Type dir)
 
 void Board::randomizeBoard()
 {
-	const int turns{ Random::get(30, 50) };
+	const int turns{ Random::get(1, 2) };
 
 	int count{ 0 };
 	
@@ -101,5 +101,27 @@ void Board::resetGame()
 	Point endTile{ 3,3 };
 
 	Board::swapTiles(emptyTile, endTile);
+
+}
+
+bool Board::checkWin() const
+{
+	for (int row{ 0 }; row < Board::SIZE; ++row)
+	{
+		for (int column{ 0 }; column < Board::SIZE; ++column)
+		{
+			int correctTile{ (row * 4) + column + 1 };
+
+			if (correctTile == 16 && m_board[row][column].isEmpty()) { return true; }
+
+			if (!(correctTile == m_board[row][column].getNum()))
+			{
+				return false;
+			}
+
+		}
+	}
+
+	return false;
 
 }
