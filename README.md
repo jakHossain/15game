@@ -1,5 +1,5 @@
 # 15 Puzzle Game
-## Built with object-oriented C++ programming.
+### Built with object-oriented C++ programming.
 
 ## Description:
 The 15 Puzzle Game is a classic sliding puzzle game where the objective is to arrange the numbers in ascending order by sliding tiles into the empty space. The game starts with a scrambled board, and the player needs to strategically move the tiles until the board is sorted. 
